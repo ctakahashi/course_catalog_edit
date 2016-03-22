@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 
+  id: MyString
+  comment: MyString
+  term: MyString
+  name: MyString
+  abbreviation: MyString
+  segments: MyText
+
+two:
+  type: 
+  id: MyString
+  comment: MyString
+  term: MyString
+  name: MyString
+  abbreviation: MyString
+  segments: MyText

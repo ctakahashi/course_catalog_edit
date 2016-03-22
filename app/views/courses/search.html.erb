@@ -1,0 +1,14 @@
+<h2> Search for courses </h2>
+
+<%= form_tag(get_results_courses_path, method: "get", class: "form") do %>
+  <div class="field">
+    <%= text_field_tag :name, nil, placeholder: "Keywords for course names" %>
+  </div>
+  <div class="field">
+    <%= label_tag :subject %><br>
+    <%= select_tag :subject, options_from_collection_for_select(Subject.order(:name), :s_id, :name), prompt: "Please select a subject" %>
+  </div>
+  <div class="actions">
+    <%= submit_tag("Search", class: "btn btn-default") %>
+  </div>
+<% end %>
