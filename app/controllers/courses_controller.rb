@@ -8,12 +8,13 @@ class CoursesController < ApplicationController
   end
 
   def search
-
+    @courses = Course.search(name: nil, subject: nil)
   end
 
-  def get_results
+  def do_search
     @name = params[:name]
     @subject = params[:subject]
+    puts params
     if !params[:c_id].nil?
       puts params[:enroll]
       if params[:enroll] == "true"
@@ -26,6 +27,10 @@ class CoursesController < ApplicationController
       end
     end
     @courses = Course.search(name: @name, subject: @subject)
+
+    respond_to do |format|
+      format.js
+    end
   end
 
   # GET /courses/1

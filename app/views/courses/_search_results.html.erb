@@ -1,0 +1,46 @@
+<% "Search courses" %>
+
+<% if flash[:notice] %>
+    <h2><%= flash[:notice] %></h2>
+<% end %>
+
+<h1>Listing courses</h1>
+
+<table style="margin: 30px;" border="1">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Code</th>
+      <th>Subjects</th>
+      <th>Description</th>
+      <th>Credits</th>
+      <th>Independent Study</th>
+      <th>Req</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @courses.each do |course| %>
+      <tr>
+        <td><%= course.id %></td>
+        <td><%= course.name %></td>
+        <td><%= course.code %></td>
+        <td><%= course.subjects %></td>
+        <td><%= course.description %></td>
+        <td><%= course.credits %></td>
+        <td><%= course.independent_study %></td>
+        <td><%= course.requirements %></td>
+        <td><%#= link_to 'Show', course_path(course.id) %></td>
+        <%# if (!Enrollment.exists?(user_id: session[:user_id], course_id: course.id)) %>
+          <td><%#= link_to 'Enroll', get_results_courses_path(name: @name, subject: @subject, c_id: course.id, enroll: "true") %> </td>
+        <%# else %>
+          <td><%#= link_to 'Unenroll', get_results_courses_path(name: @name, subject: @subject, c_id: course.id, enroll: "false"), data: {confirm: "Are you sure?"} %> </td>
+        <%# end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

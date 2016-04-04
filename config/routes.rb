@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :courses do
     collection do
       get 'search'
-      get 'get_results'
+      get 'do_search'
     end
   end
 
