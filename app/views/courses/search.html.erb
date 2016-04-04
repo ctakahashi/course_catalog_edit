@@ -13,7 +13,7 @@
 
   <div class="field search-field">
     <%= label_tag :subject %><br>
-    <%= select_tag :subject, options_from_collection_for_select(Subject.order(:name), :s_id, :name), prompt: "Please select a subject", data: { remote: true, url: url_for( action: :do_search, id: :s_id), id: "subject" } %>
+    <%= select_tag :subject, options_from_collection_for_select(Subject.order(:name), :s_id, :name), prompt: "Please select a subject", data: { remote: true, url: url_for( action: :do_search, id: :s_id)},  id: "subject" %>
   </div>
 <% end %>
 

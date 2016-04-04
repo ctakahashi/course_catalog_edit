@@ -1,0 +1,10 @@
+
+// $('#search_results').html("<%= escape_javascript (render(partial: 'search_results')) %>");
+
+$('#subject').on('change', submitForm);
+
+$('#keywords').on('keyup', submitForm);
+
+var submitForm = function() {
+  $('#form').submit();
+}
