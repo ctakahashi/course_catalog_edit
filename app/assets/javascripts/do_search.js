@@ -1,5 +1,8 @@
-
-// $('#search_results').html("<%= escape_javascript (render(partial: 'search_results')) %>");
+//= require bootstrap-sprockets
+//= require jquery
+//= require jquery_ujs
+//= require turbolinks
+//= require_tree .
 
 $('#subject').on('change', submitForm);
 
